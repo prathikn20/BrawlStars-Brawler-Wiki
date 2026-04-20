@@ -8,7 +8,6 @@
 import Foundation
 
 class BrawlService {
-    
     static func fetchBrawlers() async throws -> [Brawler] {
         let url = URL(string: "https://api.brawlapi.com/v1/brawlers")
         
@@ -16,28 +15,12 @@ class BrawlService {
             fatalError("Invalid URL")
         }
         
-        do{
+        do {
             let (data, _) = try await URLSession.shared.data(from: url)
-            
             let statement = try JSONDecoder().decode(BrawlerList.self, from: data)
-            
             return statement.list
-        } catch let error as DecodingError{
-            switch error {
-                case .typeMismatch(_, let context):
-                    print(context.debugDescription)
-                case .valueNotFound(_, let context):
-                    print(context.debugDescription)
-                case .keyNotFound(_, let context):
-                    print(context.debugDescription)
-                case .dataCorrupted(let context):
-                    print(context.debugDescription)
-                @unknown default:
-                    print(error.localizedDescription)
-            }
-            throw error
         } catch {
-            print(error.localizedDescription)
+            print("Decoding Error: \(error.localizedDescription)")
             throw error
         }
     }

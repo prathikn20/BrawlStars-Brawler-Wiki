@@ -11,15 +11,26 @@ struct BrawlerList: Codable {
     let list: [Brawler]
 }
 
-struct Brawler: Codable {
+struct Brawler: Codable, Identifiable {
     let id: Int
     let name: String
     let description: String?
     let imageUrl: String
     let `class`: BrawlerClass
     let rarity: BrawlerRarity
-    let starPowers: [Ability]
     let gadgets: [Ability]
+    let starPowers: [Ability]
+    
+    var themeColor: Color {
+            switch rarity.name {
+            case "Rare": return .green
+            case "Super Rare": return .blue
+            case "Epic": return .purple
+            case "Mythic": return .red
+            case "Legendary": return .yellow
+            default: return .cyan
+            }
+        }
 }
 
 struct BrawlerClass: Codable {
@@ -33,7 +44,7 @@ struct BrawlerRarity: Codable {
     let color: String
 }
 
-struct Ability: Codable {
+struct Ability: Codable, Identifiable {
     let id: Int
     let name: String
     let description: String
