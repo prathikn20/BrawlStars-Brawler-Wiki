@@ -2,6 +2,11 @@
 
 ## App Demo
 
+<p align="center">
+  <img src="Media/Screen%20Recording%202026-04-20%20at%2011.21.30%20PM.gif" width="250" alt="BrawlWiki GIF Demo" />
+  <img src="Media/Screenshot%202026-04-20%20at%2011.23.31%20PM.jpg" width="250" alt="Melodie Detail View" />
+  <img src="Media/Screenshot%202026-04-20%20at%2010.28.55%20PM.png" width="250" alt="Filter Header View" />
+</p>
 
 ## Key Features
 * **Active Search and Filtering:** Users can instanly lookup any bralwer by name or filter them by rarity. 
