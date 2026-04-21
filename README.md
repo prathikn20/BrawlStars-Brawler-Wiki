@@ -4,7 +4,7 @@
 
 <p align="center">
   <img src="Media/demo.gif" width="250" alt="BrawlWiki GIF Demo" />
-  <img src="Media/brawlerView.jpg" width="250" alt="Brawler Detail View" />
+  <img src="Media/brawlerView.png" width="250" alt="Brawler Detail View" />
   <img src="Media/filter.png" width="250" alt="Filter Header View" />
 </p>
 
