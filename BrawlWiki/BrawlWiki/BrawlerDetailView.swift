@@ -29,7 +29,6 @@ struct BrawlerDetailView: View {
                     }
                     .frame(height: 250)
                     .frame(maxWidth: .infinity)
-                    // The main hero image now glows in the rarity color!
                     .shadow(color: brawler.themeColor.opacity(0.8), radius: 15)
                     
                     HStack {
@@ -38,7 +37,6 @@ struct BrawlerDetailView: View {
                                 .font(.system(size: 40, weight: .black))
                                 .foregroundColor(.white)
                             
-                            // NEW: The Rarity Badge!
                             Text(brawler.rarity.name.uppercased())
                                 .font(.caption)
                                 .fontWeight(.bold)
@@ -124,8 +122,14 @@ struct AbilityRowView: View {
             imageUrl: "https://cdn.brawlify.com/brawlers/borders/16000000.png",
             class: BrawlerClass(id: 1, name: "Damage Dealer"),
             rarity: BrawlerRarity(id: 1, name: "Starting Brawler", color: "#b9eaff"),
-            gadgets: []
-            starPowers: [],
+            gadgets: [
+                Ability(id: 23000076, name: "Fast Forward", description: "Shelly dashes ahead, skipping a few unnecessary steps!", imageUrl: "https://cdn.brawlify.com/gadgets/regular/23000076.png"),
+                Ability(id: 23000244, name: "Clay Pigeons", description: "On activation, Shelly's next main attack focuses the fire to a smaller area and increases its range.", imageUrl: "https://cdn.brawlify.com/gadgets/regular/23000244.png")
+            ],
+            starPowers: [
+                Ability(id: 23000000, name: "Shell Shock", description: "Shelly's Super shells slow down enemies for 4.5 seconds!", imageUrl: "https://cdn.brawlify.com/star-powers/regular/23000000.png"),
+                Ability(id: 23000077, name: "Band-Aid", description: "When Shelly falls below 40% health, she instantly heals for 2000 health. Band-Aid recharges in 15 seconds.", imageUrl: "https://cdn.brawlify.com/star-powers/regular/23000077.png")
+            ]
         ), viewModel: BrawlViewModel())
     }
 }

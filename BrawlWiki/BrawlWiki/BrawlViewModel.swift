@@ -65,3 +65,4 @@ class BrawlViewModel: ObservableObject {
         return ["All"] + uniqueRarities
     }
 }
+

@@ -5,7 +5,7 @@
 //  Created by Prathik Nekkanti on 4/14/26.
 //
 
-import Foundation
+import SwiftUI
 
 struct BrawlerList: Codable {
     let list: [Brawler]
